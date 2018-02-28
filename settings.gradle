@@ -1,0 +1,3 @@
+include 'org.slizaa.neo4j.opencypher'
+include 'org.slizaa.neo4j.opencypher.ide'
+include 'org.slizaa.neo4j.opencypher.web'
