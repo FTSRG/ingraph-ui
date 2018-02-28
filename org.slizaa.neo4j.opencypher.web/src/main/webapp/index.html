@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Language" content="en-us">
+	<title>ingraph-UI</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="xtext/2.10.0/xtext-ace.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<div id="header">
+		<div id="xtext-editor" data-editor-xtext-lang="cypher"></div>
+		<div>
+				<button id="execute-button" type="button" class="btn btn-warning btn-block">Execute query</button>
+				<button id="query-button" type="button" class="btn btn-success btn-block">Register query</button>
+		</div>
+	</div>
+	<div id="content">
+		<table id="records" class="table">
+			<thead id="records-header"></thead>
+			<tbody id="records-body"></tbody>
+		</table>
+		<div id="status-display">
+			<p id="status-display-text">No query</p>
+		</div>
+	</div>
+
+	<script src="webjars/requirejs/2.2.0/require.min.js" defer></script>
+	<script src="main.js" defer></script>
+</body>
+</html>

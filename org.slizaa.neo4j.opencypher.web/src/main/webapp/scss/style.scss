@@ -1,0 +1,77 @@
+$primary_color: #dedede;
+$new_base: #5cb85c;
+$removed_base: #d9534f;
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    position: absolute;
+    display: flex;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 105px;
+    padding: 10px;
+    background-color: $primary_color;
+    border-bottom: 1px solid #9e9e9e;
+    box-shadow: 0px 0px 3px 0px #9e9e9e;
+
+    #xtext-editor {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+#content {
+    margin-top: 100px;
+    height: 100%;
+
+    #records {
+        #records-header {
+            background-color: $primary_color;
+
+            tr {
+                display: block;
+                margin-left: 20px;
+            }
+        }
+
+        .record {
+            box-sizing: border-box;
+            border-left: 20px solid white;
+            transition: border-left 1s;
+
+            &.status-new { border-left: 20px solid $new_base }
+            &.status-established { border-left: 20px solid transparent }
+            &.status-removed { border-left: 20px solid $removed_base }
+
+            // &.stage-1 { border-right: 5px solid lighten($new_base, 0%) }
+            // &.stage-2 { border-right: 5px solid lighten($new_base, 15%) }
+            // &.stage-3 { border-right: 5px solid transparent }
+            // &.stage-4 { border-right: 5px solid lighten($removed_base, 15%) }
+            // &.stage-5 { border-right: 5px solid lighten($removed_base, 0%) }
+        }
+    }
+
+    
+
+    #status-display {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center; /* align horizontal */
+        align-items: center;
+
+        #status-display-text {
+            color: #cfd8dc;
+            font-size: 24pt;
+            font-weight: bold;
+        }
+    }
+}
