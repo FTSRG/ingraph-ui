@@ -87,7 +87,7 @@ function initTable(keys) {
 
     const header = document.createElement('tr')
     keys.forEach(key => {
-        const td = document.createElement('td')
+        const td = document.createElement('th')
         td.innerHTML = key
         header.appendChild(td)
     })
@@ -104,9 +104,9 @@ function startup(editor) {
         }
 
         const statusDisplay = document.getElementById('status-display')
-        statusDisplay.style.display = 'visible'
+        statusDisplay.style.visibility = 'visible'
         const recordsTable = document.getElementById('records')
-        recordsTable.style.display = 'none';
+        recordsTable.style.visibility = 'hidden';
 
         const response = await fetch('/ingraph/execute-query', {
             method: "POST",
@@ -124,27 +124,26 @@ function startup(editor) {
             eventSource.close()
         }
 
-        setStatus('Registering query')
         const response = await fetch('/ingraph/register-query', {
             method: "POST",
             body: editor.getValue(),
             credentials: 'same-origin',
         })
+        setStatus('Registering query')
         const session = await response.json()
         console.log(`Registered query with id: ${session.id}`)
 
         const statusDisplay = document.getElementById('status-display')
-        statusDisplay.style.display = 'none'
+        statusDisplay.style.visibility = 'hidden'
         const recordsTable = document.getElementById('records')
-        recordsTable.style.display = 'visible';
-
+        recordsTable.style.visibility = 'visible'
         initTable(session.keys)
 
         eventSource = new EventSource(`/ingraph/events?id=${session.id}`, {
             withCredentials: true,
         })
         eventSource.onopen = () => {
-            statusDisplay.style.display = 'none'
+            statusDisplay.style.visibility = 'hidden'
         }
         eventSource.onmessage = (message) => {
             const delta = JSON.parse(message.data)

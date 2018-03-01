@@ -142,7 +142,11 @@ public class OpenCypherSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+<<<<<<< HEAD
 	 *     'RELATIONSHIP' | 'NODE' | 'REL'
+=======
+	 *     'RELATIONSHIP' | 'REL' | 'NODE'
+>>>>>>> 5042096b4f924932adfacd2b70ca4b062cbad740
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '(' ids=LiteralIds
