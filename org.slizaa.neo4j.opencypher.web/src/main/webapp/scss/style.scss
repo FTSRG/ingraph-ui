@@ -29,17 +29,18 @@ $removed_base: #d9534f;
 
 
 #content {
-    margin-top: 100px;
-    height: 100%;
+    position: absolute;
+    top: 105;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 
     #records {
+        visibility: hidden;
+
         #records-header {
             background-color: $primary_color;
-
-            tr {
-                display: block;
-                margin-left: 20px;
-            }
         }
 
         .record {

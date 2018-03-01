@@ -1,3 +1,5 @@
+graphs/
+
 plugin.xml_gen
 bin/
 target/
@@ -23,7 +25,7 @@ catalog-v*.xml
 
 ### Gradle ###
 .gradle
-build/
+**/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting

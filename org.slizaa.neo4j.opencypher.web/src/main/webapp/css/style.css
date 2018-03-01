@@ -20,23 +20,26 @@
     margin-right: 10px; }
 
 #content {
-  margin-top: 100px;
-  height: 100%; }
-  #content #records #records-header {
-    background-color: #dedede; }
-    #content #records #records-header tr {
-      display: block;
-      margin-left: 20px; }
-  #content #records .record {
-    box-sizing: border-box;
-    border-left: 20px solid white;
-    transition: border-left 1s; }
-    #content #records .record.status-new {
-      border-left: 20px solid #5cb85c; }
-    #content #records .record.status-established {
-      border-left: 20px solid transparent; }
-    #content #records .record.status-removed {
-      border-left: 20px solid #d9534f; }
+  position: absolute;
+  top: 105;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
+  #content #records {
+    visibility: hidden; }
+    #content #records #records-header {
+      background-color: #dedede; }
+    #content #records .record {
+      box-sizing: border-box;
+      border-left: 20px solid white;
+      transition: border-left 1s; }
+      #content #records .record.status-new {
+        border-left: 20px solid #5cb85c; }
+      #content #records .record.status-established {
+        border-left: 20px solid transparent; }
+      #content #records .record.status-removed {
+        border-left: 20px solid #d9534f; }
   #content #status-display {
     display: flex;
     width: 100%;

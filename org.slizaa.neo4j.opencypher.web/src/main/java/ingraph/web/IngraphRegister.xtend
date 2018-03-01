@@ -44,6 +44,7 @@ class IngraphRegister extends HttpServlet {
 			response.writer.append(responseObject.toString)
 			response.setStatus(HttpServletResponse.SC_OK)
 		} catch (Exception ex) {
+			ex.printStackTrace
 			response.sendError(500, "Cannot parse query")
 		}
 	}
